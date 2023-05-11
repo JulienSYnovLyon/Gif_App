@@ -8,8 +8,9 @@ import 'theme_provider.dart';
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (_) => ThemeProvider(),
-      child: MyApp(),
+      create: (_) =>
+          ThemeProvider(), // Crée une instance de ThemeProvider et la fournit aux widgets enfants
+      child: MyApp(), // Exécute l'application MyApp
     ),
   );
 }
@@ -20,8 +21,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Search Gif',
-      theme: Provider.of<ThemeProvider>(context).getTheme(),
-      home: HomePage(),
+      theme: Provider.of<ThemeProvider>(context)
+          .getTheme(), // Obtient le thème actuel à partir du fournisseur de thème
+      home:
+          HomePage(), // Définit la page d'accueil de l'application comme étant HomePage()
     );
   }
 }
